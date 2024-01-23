@@ -1,0 +1,27 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/path.jpg",
+          "genre_ids": [
+              10766
+          ],
+          "id": 206559,
+          "origin_country": [
+              "ZA"
+          ],
+          "original_language": "af",
+          "original_name": "Original Name",
+          "overview": "Overview",
+          "popularity": 2965.138,
+          "poster_path": "/path.jpg",
+          "first_air_date": "2005-10-13",
+          "name": "Name",
+          "vote_average": 6.37,
+          "vote_count": 27
+      }
+  ],
+  "total_pages": 54,
+  "total_results": 1077
+}

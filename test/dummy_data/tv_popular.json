@@ -1,0 +1,29 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/path.jpg",
+          "genre_ids": [
+              80,
+              18,
+              35
+          ],
+          "id": 79744,
+          "origin_country": [
+              "US"
+          ],
+          "original_language": "en",
+          "original_name": "Original Name",
+          "overview": "Overview",
+          "popularity": 2799.572,
+          "poster_path": "/path.jpg",
+          "first_air_date": "2018-10-16",
+          "name": "Name",
+          "vote_average": 8.279,
+          "vote_count": 1542
+      }
+  ],
+  "total_pages": 8145,
+  "total_results": 162889
+}
