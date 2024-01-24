@@ -1,3 +1,5 @@
-import 'package:flutter/widgets.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 
-final RouteObserver<ModalRoute> routeObserver = RouteObserver<ModalRoute>();
+FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+FirebaseAnalyticsObserver routeObserver =
+    FirebaseAnalyticsObserver(analytics: analytics);

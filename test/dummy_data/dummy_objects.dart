@@ -61,6 +61,23 @@ final testMovieMap = {
   'title': 'title',
 };
 
+final testTv = Tv(
+  adult: false,
+  backdropPath: 'backdropPath',
+  genreIds: [1],
+  id: 1,
+  originCountry: ['originCountry'],
+  originalLanguage: 'originalLanguage',
+  originalName: 'originalName',
+  overview: 'overview',
+  popularity: 2.0,
+  posterPath: 'posterPath',
+  firstAirDate: DateTime.parse("2022-01-01"),
+  name: 'name',
+  voteAverage: 4.0,
+  voteCount: 30,
+);
+
 final testTvDetail = TvDetail(
   adult: false,
   backdropPath: 'backdropPath',
@@ -162,3 +179,5 @@ final testWatchlistTv = Tv.watchlist(
   posterPath: 'posterPath',
   overview: 'overview',
 );
+
+final testTvList = [testTv];
