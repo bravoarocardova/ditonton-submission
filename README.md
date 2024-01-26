@@ -1,18 +1,23 @@
 # ditonton
 
-A new Flutter project.
+Flutter Project dicoding Submission.
 
-## Getting Started
+#### App Screenshot
 
-This project is a starting point for a Flutter application.
+![App Screenshot](screenshot/1.png)
+![App Screenshot](screenshot/2.png)
+![App Screenshot](screenshot/3.png)
 
-A few resources to get you started if this is your first Flutter project:
+#### Firebase Analytics
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+![Firebase Analytics](screenshot/analytics.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Firebase Crashlytics
+
+![Firebase Crashlytics](screenshot/crashlytics.png)
+
+#### Codemagic
+
+![Codemagic Build](screenshot/buildCI.png)
 
 [![Codemagic build status](https://api.codemagic.io/apps/65afabd5c7ede2dd64968823/65afabd5c7ede2dd64968822/status_badge.svg)](https://codemagic.io/apps/65afabd5c7ede2dd64968823/65afabd5c7ede2dd64968822/latest_build)
