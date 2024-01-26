@@ -18,10 +18,9 @@ class WatchlistMoviesBloc
       result.fold(
         (failure) => emit(WatchlistMovieError(failure.message)),
         (moviesData) {
+          emit(WatchlistMovieHasData(moviesData));
           if (moviesData.isEmpty) {
             emit(WatchlistMovieEmpty());
-          } else {
-            emit(WatchlistMovieHasData(moviesData));
           }
         },
       );

@@ -16,10 +16,9 @@ class TopRatedTvBloc extends Bloc<TopRatedTvEvent, TopRatedTvState> {
       result.fold(
         (failure) => emit(TopRatedTvError(failure.message)),
         (tvData) {
+          emit(TopRatedTvHasData(tvData));
           if (tvData.isEmpty) {
             emit(TopRatedTvEmpty());
-          } else {
-            emit(TopRatedTvHasData(tvData));
           }
         },
       );

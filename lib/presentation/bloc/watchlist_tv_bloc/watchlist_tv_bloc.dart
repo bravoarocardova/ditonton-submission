@@ -16,10 +16,9 @@ class WatchlistTvBloc extends Bloc<WatchlistTvEvent, WatchlistTvState> {
       result.fold(
         (failure) => emit(WatchlistTvError(failure.message)),
         (tvData) {
+          emit(WatchlistTvHasData(tvData));
           if (tvData.isEmpty) {
             emit(WatchlistTvEmpty());
-          } else {
-            emit(WatchlistTvHasData(tvData));
           }
         },
       );

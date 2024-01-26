@@ -17,10 +17,9 @@ class NowPlayingTvBloc extends Bloc<NowPlayingTvEvent, NowPlayingTvState> {
       result.fold(
         (failure) => emit(NowPlayingTvError(failure.message)),
         (tvData) {
+          emit(NowPlayingTvHasData(tvData));
           if (tvData.isEmpty) {
             emit(NowPlayingTvEmpty());
-          } else {
-            emit(NowPlayingTvHasData(tvData));
           }
         },
       );

@@ -18,10 +18,9 @@ class TopRatedMoviesBloc
       result.fold(
         (failure) => emit(TopRatedMovieError(failure.message)),
         (tvData) {
+          emit(TopRatedMovieHasData(tvData));
           if (tvData.isEmpty) {
             emit(TopRatedMovieEmpty());
-          } else {
-            emit(TopRatedMovieHasData(tvData));
           }
         },
       );

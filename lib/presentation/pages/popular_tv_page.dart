@@ -46,12 +46,11 @@ class _PopularTvPageState extends State<PopularTvPage> {
               );
             } else if (state is PopularTvError) {
               return Center(
+                key: const Key('error_message'),
                 child: Text(state.message),
               );
             } else {
-              return Container(
-                key: Key('error_message'),
-              );
+              return Container();
             }
           },
         ),

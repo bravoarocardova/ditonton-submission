@@ -16,10 +16,9 @@ class PopularTvBloc extends Bloc<PopularTvEvent, PopularTvState> {
       result.fold(
         (failure) => emit(PopularTvError(failure.message)),
         (tvData) {
+          emit(PopularTvHasData(tvData));
           if (tvData.isEmpty) {
             emit(PopularTvEmpty());
-          } else {
-            emit(PopularTvHasData(tvData));
           }
         },
       );
