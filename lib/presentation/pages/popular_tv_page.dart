@@ -1,8 +1,8 @@
-import 'package:ditonton/common/state_enum.dart';
+import 'package:ditonton/presentation/bloc/popular_tv_bloc/popular_tv_bloc.dart';
 
-import 'package:ditonton/presentation/provider/popular_tv_notifier.dart';
 import 'package:ditonton/presentation/widgets/tv_card_list.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class PopularTvPage extends StatefulWidget {
@@ -17,8 +17,7 @@ class _PopularTvPageState extends State<PopularTvPage> {
   void initState() {
     super.initState();
     Future.microtask(() =>
-        Provider.of<PopularTvNotifier>(context, listen: false)
-            .fetchPopularTv());
+        Provider.of<PopularTvBloc>(context, listen: false).add(PopularTv()));
   }
 
   @override
@@ -29,24 +28,29 @@ class _PopularTvPageState extends State<PopularTvPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Consumer<PopularTvNotifier>(
-          builder: (context, data, child) {
-            if (data.state == RequestState.Loading) {
+        child: BlocBuilder<PopularTvBloc, PopularTvState>(
+          builder: (context, state) {
+            if (state is PopularTvLoading) {
               return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.state == RequestState.Loaded) {
+            } else if (state is PopularTvHasData) {
+              final result = state.result;
               return ListView.builder(
+                padding: const EdgeInsets.all(8),
                 itemBuilder: (context, index) {
-                  final tv = data.tv[index];
-                  return TvCard(tv);
+                  final movie = result[index];
+                  return TvCard(movie);
                 },
-                itemCount: data.tv.length,
+                itemCount: result.length,
+              );
+            } else if (state is PopularTvError) {
+              return Center(
+                child: Text(state.message),
               );
             } else {
-              return Center(
-                key: const Key('error_message'),
-                child: Text(data.message),
+              return Container(
+                key: Key('error_message'),
               );
             }
           },
